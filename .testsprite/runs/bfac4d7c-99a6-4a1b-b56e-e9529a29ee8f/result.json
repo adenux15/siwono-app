@@ -1,0 +1,20 @@
+{
+  "testId": "32b43773-81ac-432a-b27d-db0e7d77c319",
+  "status": "failed",
+  "startedAt": "2026-07-19T09:02:24.398Z",
+  "finishedAt": "2026-07-19T09:04:36.802Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784451874339687//tmp/98bd0207-4462-47ad-860f-280c7e54f281/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_39d5eab81c774f5e",
+  "runIdIfAvailable": "bfac4d7c-99a6-4a1b-b56e-e9529a29ee8f",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 7,
+  "failureKind": "routing_404",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (routing_404): TEST FAILURE\n\nClicking 'Proses Pengembalian' did not display the return-processing form or a success message — the app navigated to a 404 page instead.\n\nObservations:\n- The page shows a large '404' message with the text 'This page could not be found.'\n- The current URL is /peminjaman/kembali/194b74c1-379f-418e-a079-b83180432f03 indicating the return route is missing or broken\n- No return form fields or any success/confirmation notice are visible on the page",
+  "apiOutput": null,
+  "trace": null
+}

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { returnPeminjaman } from "../../../actions"
+import { returnPeminjaman } from "../../actions"
 
 export default function ProsesPengembalianPage({ params }: { params: { id: string } }) {
   const router = useRouter()
