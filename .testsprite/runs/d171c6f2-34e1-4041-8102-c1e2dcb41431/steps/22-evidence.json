@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "snapshot",
+    "stepIndex": 22,
+    "summary": "Step 22 'Expected the loan detail dialog to contain 'Proses Pengembalian' or a form to process the return.' failed. Error: TEST FAILURE\n\nThe 'Proses Pengembalian' action is not present in the loan detail dialog, so the return-processing feature could not be executed.\n\nObservations:\n- The 'Detail Warkah' dialog for Warkah No. 5678/2025 displays status 'Dipinjam' and provides buttons 'Tutup' and 'Lacak Rantai Peminjaman' (and 'Close'); there is no button or menu item labeled 'Proses Pengembalian'.\n- Multiple searches and visual inspection of the dialog and related pages were performed; no control to initiate the return process was found.",
+    "path": "steps/22-snapshot.html"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "testId": "32b43773-81ac-432a-b27d-db0e7d77c319",
+  "status": "failed",
+  "startedAt": "2026-07-19T08:45:46.317Z",
+  "finishedAt": "2026-07-19T08:54:56.987Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784451293885857//tmp/2cdf10a6-05fa-4114-a8ba-0a136b146d54/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_2a1bdb6a9043fddb",
+  "runIdIfAvailable": "d171c6f2-34e1-4041-8102-c1e2dcb41431",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 21,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion) on step 21: TEST FAILURE\n\nThe 'Proses Pengembalian' action is not present in the loan detail dialog, so the return-processing feature could not be executed.\n\nObservations:\n- The 'Detail Warkah' dialog for Warkah No. 5678/2025 displays status 'Dipinjam' and provides buttons 'Tutup' and 'Lacak Rantai Peminjaman' (and 'Close'); there is no button or menu item labeled 'Proses Pengembalian'.\n- Multiple searches and visual inspection of the dialog and related pages were performed; …",
+  "apiOutput": null,
+  "trace": null
+}

@@ -1,0 +1,5 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nClicking the 'Proses Pengembalian' button did not open a return-processing form or show a success message — the app returned a 404 error page instead.\n\nObservations:\n- The UI navigated to /peminjaman/kembali/194b74c1-379f-418e-a079-b83180432f03 and displayed '404 This page could not be found.'\n- No return-processing form or success notification appeared after clicking 'Proses Pengembalian'.\n- The application shell (sidebar and header) rendered, confirming the route exists in the app but the target page/handler is missing or broken.",
+  "recommendedFixTarget": null,
+  "evidence": []
+}
