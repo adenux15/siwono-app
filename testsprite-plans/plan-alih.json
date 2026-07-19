@@ -11,7 +11,7 @@
     },
     {
       "type": "action",
-      "description": "Navigate to /peminjaman/alih"
+      "description": "Navigate to /peminjaman/alih/loan_1"
     },
     {
       "type": "assertion",

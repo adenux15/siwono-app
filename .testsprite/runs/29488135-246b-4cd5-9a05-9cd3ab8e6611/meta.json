@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "cli-v1",
+  "snapshotId": "snap_140475a6201eb590",
+  "testId": "4971014a-0f1a-48af-9c03-988c7a693022",
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "codeVersion": "v1",
+  "runIdIfAvailable": "29488135-246b-4cd5-9a05-9cd3ab8e6611",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "failedStepIndex": 5,
+  "failureKind": null,
+  "capturedAt": "2026-07-19T07:38:06.755Z",
+  "fetchedAt": "2026-07-19T07:50:31.986Z"
+}

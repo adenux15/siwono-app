@@ -1,0 +1,5 @@
+{
+  "rootCauseHypothesis": "TEST BLOCKED\n\nThe test could not be run because login failed and the authenticated UI could not be reached.\n\nObservations:\n- The login form displayed the error message 'Gagal login!'.\n- The page remained on the login screen with Email and Password fields filled and the 'Masuk ke Sistem' button visible.\n- No dashboard or sidebar was accessible, preventing navigation to the 'Manajemen Rak' feature.",
+  "recommendedFixTarget": null,
+  "evidence": []
+}

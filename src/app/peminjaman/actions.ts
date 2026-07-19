@@ -3,6 +3,8 @@
 import { db } from "@/db";
 import { archives, loans, loanTransfers, notifications } from "@/db/schema";
 import { eq, desc, and, lt, count } from "drizzle-orm";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 export async function createPeminjaman(data: {
   nomorWarkah: string;
@@ -12,6 +14,10 @@ export async function createPeminjaman(data: {
   catatan: string;
 }) {
   try {
+    const session = await auth.api.getSession({ headers: await headers() });
+    if (!session?.user?.id) return { success: false, error: "Unauthorized" };
+    const currentUserId = session.user.id;
+
     // 1. Find the archive by nomorWarkah
     const archiveResult = await db
       .select()
@@ -40,11 +46,10 @@ export async function createPeminjaman(data: {
     // Use a transaction to ensure both records are updated atomically
     await db.transaction(async (tx) => {
       // 3. Create loan record
-      // Note: 'usr_1' is a mock initial user ID since authentication is not fully implemented yet
       await tx.insert(loans).values({
         id: crypto.randomUUID(),
         archiveId: archive.id,
-        initialUserId: "usr_1",
+        initialUserId: currentUserId,
         borrowerName: data.namaPeminjam,
         borrowDate: borrowDate,
         dueDate: dueDate,
@@ -67,8 +72,12 @@ export async function createPeminjaman(data: {
   }
 }
 
-export async function getRiwayatPeminjaman(userId: string = "usr_1") {
+export async function getRiwayatPeminjaman(userId?: string) {
   try {
+    const session = await auth.api.getSession({ headers: await headers() });
+    const targetUserId = userId || session?.user?.id;
+    if (!targetUserId) return { success: false, error: "Unauthorized" };
+
     const result = await db
       .select({
         id: loans.id,
@@ -174,8 +183,12 @@ export async function checkAndUpdateOverdueLoans() {
   }
 }
 
-export async function getNotifications(userId: string = "usr_1") {
+export async function getNotifications(userId?: string) {
   try {
+    const session = await auth.api.getSession({ headers: await headers() });
+    const targetUserId = userId || session?.user?.id;
+    if (!targetUserId) return { success: false, error: "Unauthorized" };
+
     const result = await db
       .select({
         id: notifications.id,
@@ -213,15 +226,19 @@ export async function markNotificationAsRead(notificationId: string) {
 }
 
 export async function getNotificationHistory(
-  userId: string = "usr_1",
+  userId?: string,
   options?: { status?: string; page?: number; limit?: number },
 ) {
   try {
+    const session = await auth.api.getSession({ headers: await headers() });
+    const targetUserId = userId || session?.user?.id;
+    if (!targetUserId) return { success: false, error: "Unauthorized" };
+
     const page = options?.page || 1;
     const limit = options?.limit || 10;
     const offset = (page - 1) * limit;
 
-    const conditions = [eq(notifications.userId, userId)];
+    const conditions = [eq(notifications.userId, targetUserId)];
     if (options?.status === "read") {
       conditions.push(eq(notifications.isRead, true));
     } else if (options?.status === "unread") {
@@ -323,6 +340,10 @@ export async function transferPeminjaman(data: {
   notes: string;
 }) {
   try {
+    const session = await auth.api.getSession({ headers: await headers() });
+    if (!session?.user?.id) return { success: false, error: "Unauthorized" };
+    const currentUserId = session.user.id;
+
     const loanResult = await db
       .select()
       .from(loans)
@@ -352,8 +373,8 @@ export async function transferPeminjaman(data: {
       await tx.insert(loanTransfers).values({
         id: crypto.randomUUID(),
         loanId: data.loanId,
-        fromUserId: loan.initialUserId, // Currently using mock user
-        toUserId: "usr_2", // Mock new user ID until auth is added
+        fromUserId: loan.initialUserId,
+        toUserId: currentUserId,
         transferDate: new Date(),
         notes: `Dialihkan ke ${data.newBorrowerName}. Catatan: ${data.notes}`,
         createdAt: new Date(),
