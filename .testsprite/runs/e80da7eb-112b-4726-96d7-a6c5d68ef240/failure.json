@@ -1,0 +1,9 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nThe peminjaman submission did not show the expected success confirmation.\n\nObservations:\n- After clicking 'Simpan Peminjaman', a red error message 'Terjadi kesalahan pada sistem.' is visible on the Peminjaman form page.\n- The form remains visible with the entered values (Nomor Warkah: 1234/2026; Nama Peminjam: Budi Santoso; Keperluan: Permintaan pemeriksaan arsip untuk keperluan penelitian.), and no success message 'Peminjaman Berhasil Dicatat' was displayed.",
+  "recommendedFixTarget": {
+    "kind": "unknown",
+    "reference": "Simpan Peminjaman",
+    "rationale": null
+  },
+  "evidence": []
+}

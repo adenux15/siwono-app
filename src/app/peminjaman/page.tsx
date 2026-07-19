@@ -1,15 +1,16 @@
 "use client"
 
-import { useState, Suspense } from "react"
+import { useState, Suspense, useEffect } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
-import { ArrowLeft, Calendar, FileText, User } from "lucide-react"
+import { ArrowLeft, Calendar, FileText, User, Clock, CheckCircle2, AlertCircle } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { createPeminjaman } from "./actions"
+import { createPeminjaman, getRiwayatPeminjaman } from "./actions"
 
 function PeminjamanFormContent() {
   const searchParams = useSearchParams()
@@ -183,19 +184,107 @@ function PeminjamanFormContent() {
   )
 }
 
+function RiwayatListContent() {
+  const [history, setHistory] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // don't hardcode usr_1, use empty to fetch own history via session
+    getRiwayatPeminjaman().then((res) => {
+      if (res.success && res.data) {
+        setHistory(res.data)
+      }
+      setIsLoading(false)
+    })
+  }, [])
+
+  const aktif = history.filter(h => h.status !== "Selesai")
+
+  if (isLoading) return <div className="text-center p-8 text-slate-500">Memuat riwayat peminjaman...</div>
+
+  if (aktif.length === 0) {
+    return (
+      <Card className="py-12 text-center border-dashed">
+        <CardContent>
+          <p className="text-slate-500">Tidak ada arsip yang sedang dipinjam.</p>
+        </CardContent>
+      </Card>
+    )
+  }
+
+  return (
+    <div className="space-y-4">
+      {aktif.map((item) => (
+        <Card key={item.id} className={`shadow-sm border-l-4 ${item.status === 'Terlambat' ? 'border-l-red-500' : 'border-l-blue-500'}`}>
+          <CardHeader className="pb-3">
+            <div className="flex justify-between items-start">
+              <div className="space-y-1">
+                <CardTitle className="text-xl text-slate-800 flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-slate-500" />
+                  Warkah No. {item.archiveNumber}
+                </CardTitle>
+                <CardDescription>Peminjam: {item.borrowerName}</CardDescription>
+              </div>
+              <Badge 
+                variant={item.status === "Terlambat" ? "destructive" : "default"} 
+                className={item.status === "Terlambat" ? "" : "bg-blue-100 text-blue-700 hover:bg-blue-100"}
+              >
+                {item.status}
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="space-y-1">
+                <p className="text-xs text-slate-500 font-medium flex items-center gap-1"><Calendar className="h-3 w-3"/> Tanggal Pinjam</p>
+                <p className="text-sm font-semibold text-slate-700">{new Date(item.borrowDate).toLocaleDateString()}</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs text-slate-500 font-medium flex items-center gap-1"><Clock className="h-3 w-3"/> Batas Waktu</p>
+                <p className={`text-sm font-semibold ${item.status === 'Terlambat' ? 'text-red-600' : 'text-slate-700'}`}>{new Date(item.dueDate).toLocaleDateString()}</p>
+              </div>
+            </div>
+            <div className="flex justify-end pt-2 border-t mt-4 gap-2">
+              <Link href={`/peminjaman/alih/${item.id}`}>
+                <Button variant="outline" size="sm" className="bg-white">
+                  Alih Peminjaman
+                </Button>
+              </Link>
+              <Link href={`/peminjaman/kembali/${item.id}`}>
+                <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+                  Proses Pengembalian
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  )
+}
+
 export default function PeminjamanPage() {
   return (
-    <main className="container mx-auto px-4 py-8 max-w-2xl font-sans">
+    <main className="container mx-auto px-4 py-8 max-w-4xl font-sans">
         <div className="mb-6">
           <Link href="/" className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors bg-slate-200/50 hover:bg-slate-200 px-3 py-1.5 rounded-full">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Kembali ke Pencarian
+            Kembali ke Beranda
           </Link>
         </div>
 
-        <Suspense fallback={<div className="h-[400px] flex items-center justify-center text-slate-500">Memuat form...</div>}>
-          <PeminjamanFormContent />
-        </Suspense>
+        <div className="grid md:grid-cols-[1fr_400px] gap-8 items-start">
+          <div>
+            <h2 className="text-2xl font-bold mb-4 text-slate-800">Riwayat Peminjaman Aktif</h2>
+            <RiwayatListContent />
+          </div>
+
+          <div>
+            <Suspense fallback={<div className="h-[400px] flex items-center justify-center text-slate-500">Memuat form...</div>}>
+              <PeminjamanFormContent />
+            </Suspense>
+          </div>
+        </div>
     </main>
   )
 }
