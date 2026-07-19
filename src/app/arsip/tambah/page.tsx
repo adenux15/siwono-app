@@ -43,7 +43,8 @@ export default function TambahArsipPage() {
     })
   }, [])
 
-  const handleRoomChange = (value: string) => {
+  const handleRoomChange = (value: string | null) => {
+    if (!value) return
     setSelectedRoom(value)
     setSelectedRack("")
     setSelectedAlbum("")
@@ -55,7 +56,8 @@ export default function TambahArsipPage() {
     })
   }
 
-  const handleRackChange = (value: string) => {
+  const handleRackChange = (value: string | null) => {
+    if (!value) return
     setSelectedRack(value)
     setSelectedAlbum("")
     setAlbums([])
@@ -183,7 +185,7 @@ export default function TambahArsipPage() {
                 
                 <div className="space-y-2">
                   <Label className="text-slate-700">Album / Box</Label>
-                  <Select value={selectedAlbum} onValueChange={setSelectedAlbum} disabled={!selectedRack} required>
+                  <Select value={selectedAlbum} onValueChange={(val) => val && setSelectedAlbum(val)} disabled={!selectedRack} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Pilih Album" />
                     </SelectTrigger>

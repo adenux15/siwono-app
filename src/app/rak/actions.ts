@@ -83,6 +83,8 @@ export async function createRack(data: {
       id: crypto.randomUUID(),
       code: data.code,
       roomId: data.roomId,
+      rows: 5,
+      cols: 5,
       createdAt: new Date(),
     })
 
