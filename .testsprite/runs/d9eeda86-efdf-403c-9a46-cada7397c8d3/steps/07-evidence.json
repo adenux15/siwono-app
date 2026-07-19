@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "snapshot",
+    "stepIndex": 7,
+    "summary": "Step 7 'Click the 'Konfirmasi Pengembalian' button to process the return and observe whether a success message appears' passed.",
+    "path": "steps/07-snapshot.html"
+  }
+]

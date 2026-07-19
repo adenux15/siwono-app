@@ -1,0 +1,20 @@
+{
+  "testId": "32b43773-81ac-432a-b27d-db0e7d77c319",
+  "status": "failed",
+  "startedAt": "2026-07-19T09:08:47.840Z",
+  "finishedAt": "2026-07-19T09:12:30.023Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784452346437866//tmp/600af4c0-a91a-49cd-9fba-d34963d4bd84/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_ee71ca9bc59793fc",
+  "runIdIfAvailable": "d9eeda86-efdf-403c-9a46-cada7397c8d3",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 8,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion) on step 8: TEST FAILURE\n\nThe return confirmation flow did not complete successfully — an error was shown when attempting to process the return.\n\nObservations:\n- After clicking the 'Konfirmasi Pengembalian' button, the page displayed the alert 'Gagal memproses pengembalian.'\n- No success message or UI state indicating the loan status changed to \"Tersedia\" was observed.\n- The return confirmation dialog remains visible and the action was not completed.",
+  "apiOutput": null,
+  "trace": null
+}

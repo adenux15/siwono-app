@@ -287,6 +287,9 @@ export async function getNotificationHistory(
 
 export async function returnPeminjaman(loanId: string) {
   try {
+    if (!loanId) {
+      return { success: false, error: "Gagal memproses: ID peminjaman tidak valid." };
+    }
     const loanResult = await db
       .select()
       .from(loans)
@@ -328,9 +331,9 @@ export async function returnPeminjaman(loanId: string) {
     });
 
     return { success: true };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error returning peminjaman:", error);
-    return { success: false, error: "Gagal memproses pengembalian." };
+    return { success: false, error: "Gagal memproses: " + (error?.message || String(error)) };
   }
 }
 

@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useParams } from "next/navigation"
 import { returnPeminjaman } from "../../actions"
 
-export default function ProsesPengembalianPage({ params }: { params: { id: string } }) {
+export default function ProsesPengembalianPage() {
   const router = useRouter()
+  const params = useParams<{ id: string }>()
   const loanId = params.id
   
   const [isSubmitting, setIsSubmitting] = useState(false)

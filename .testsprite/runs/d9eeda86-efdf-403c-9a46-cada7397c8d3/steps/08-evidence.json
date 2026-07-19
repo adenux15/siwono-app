@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "snapshot",
+    "stepIndex": 8,
+    "summary": "Step 8 'Expected success message 'Berhasil memproses pengembalian.' to be shown.' failed. Error: TEST FAILURE\n\nThe return confirmation flow did not complete successfully — an error was shown when attempting to process the return.\n\nObservations:\n- After clicking the 'Konfirmasi Pengembalian' button, the page displayed the alert 'Gagal memproses pengembalian.'\n- No success message or UI state indicating the loan status changed to \"Tersedia\" was observed.\n- The return confirmation dialog remains visible and the action was not completed.",
+    "path": "steps/08-snapshot.html"
+  }
+]

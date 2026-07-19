@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "snapshot",
+    "stepIndex": 9,
+    "summary": "Step 9 'Expected the return confirmation form to be dismissed (the 'Konfirmasi Pengembalian' button should not be visible).' failed. Error: TEST FAILURE\n\nThe return confirmation flow did not complete successfully — an error was shown when attempting to process the return.\n\nObservations:\n- After clicking the 'Konfirmasi Pengembalian' button, the page displayed the alert 'Gagal memproses pengembalian.'\n- No success message or UI state indicating the loan status changed to \"Tersedia\" was observed.\n- The return confirmation dialog remains visible and the action was not completed.",
+    "path": "steps/09-snapshot.html"
+  }
+]
