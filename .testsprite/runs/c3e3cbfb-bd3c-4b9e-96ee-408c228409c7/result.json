@@ -1,0 +1,20 @@
+{
+  "testId": "734afa86-2d02-4f6d-b9d6-9bdb220efab3",
+  "status": "failed",
+  "startedAt": "2026-07-19T08:22:52.914Z",
+  "finishedAt": "2026-07-19T08:26:24.355Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784449581740592//tmp/250cbcba-675f-4f49-b1cf-98c09f3c2869/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_f157ff7455e86a98",
+  "runIdIfAvailable": "c3e3cbfb-bd3c-4b9e-96ee-408c228409c7",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 12,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion): TEST FAILURE\n\nSaving the peminjaman did not succeed — a system error was shown after attempting to submit the form.\n\nObservations:\n- The form 'Form Peminjaman Arsip' is visible and filled with Nomor Warkah = 1234/2026, Nama = Budi Santoso, Tanggal Pinjam = 2026-07-19, Durasi = 7, Catatan = 'Keperluan riset internal.'\n- After clicking 'Simpan Peminjaman', a red error message 'Terjadi kesalahan pada sistem.' is displayed under the form.\n- The expected success message 'Peminjam…",
+  "apiOutput": null,
+  "trace": null
+}

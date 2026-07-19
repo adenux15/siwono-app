@@ -31,7 +31,8 @@ export default function LoginPage() {
           router.refresh();
         },
         onError: (ctx) => {
-          setError(ctx.error.message || "Gagal login!");
+          console.error("Login error ctx:", ctx);
+          setError(ctx.error.message || `Gagal login: ${ctx.error.status || 'Unknown error'}`);
           setLoading(false);
         }
       });

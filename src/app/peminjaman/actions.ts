@@ -66,9 +66,9 @@ export async function createPeminjaman(data: {
     });
 
     return { success: true };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error creating peminjaman:", error);
-    return { success: false, error: "Terjadi kesalahan pada sistem." };
+    return { success: false, error: `Terjadi kesalahan pada sistem: ${error.message || String(error)}` };
   }
 }
 
