@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Archive, LayoutDashboard, Search, Layers, X } from "lucide-react"
+import { Archive, LayoutDashboard, Search, Layers, X, Users, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
@@ -11,6 +11,8 @@ const NAV_ITEMS = [
   { name: "Daftar Arsip", href: "/arsip", icon: Archive },
   { name: "Manajemen Rak", href: "/rak", icon: Layers },
   { name: "Peminjaman", href: "/peminjaman", icon: Archive },
+  { name: "Petugas", href: "/petugas", icon: Users },
+  { name: "Riwayat", href: "/riwayat", icon: Clock },
 ]
 
 export function Sidebar({ 
