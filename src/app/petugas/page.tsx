@@ -1,21 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import { Search, Plus, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Plus, Shield, Loader2 } from "lucide-react";
 import Link from "next/link";
+import { getUsers } from "./actions";
 
 export default function PetugasPage() {
   const [search, setSearch] = useState("");
+  const [petugasData, setPetugasData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const dummyPetugas = [
-    { id: 1, name: "Ahmad Rifai", role: "Admin Ruang", username: "ahmad.r", status: "Aktif" },
-    { id: 2, name: "Budi Santoso", role: "Petugas Lapangan", username: "budi.s", status: "Aktif" },
-    { id: 3, name: "Citra Kirana", role: "Petugas Lapangan", username: "citra.k", status: "Nonaktif" },
-  ];
+  useEffect(() => {
+    getUsers().then((res) => {
+      if (res.success && res.data) {
+        setPetugasData(res.data);
+      }
+      setIsLoading(false);
+    });
+  }, []);
 
-  const filteredData = dummyPetugas.filter(p => 
-    p.name.toLowerCase().includes(search.toLowerCase()) || 
-    p.role.toLowerCase().includes(search.toLowerCase())
+  const filteredData = petugasData.filter(p => 
+    (p.name && p.name.toLowerCase().includes(search.toLowerCase())) || 
+    (p.role && p.role.toLowerCase().includes(search.toLowerCase()))
   );
 
   return (
@@ -45,7 +51,12 @@ export default function PetugasPage() {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto min-h-[300px]">
+          {isLoading ? (
+            <div className="flex justify-center p-12">
+              <Loader2 className="h-8 w-8 text-blue-500 animate-spin" />
+            </div>
+          ) : (
           <table className="w-full text-left">
             <thead className="bg-gray-50/50">
               <tr>
@@ -57,12 +68,14 @@ export default function PetugasPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {filteredData.map((petugas) => (
+              {filteredData.map((petugas) => {
+                const status = petugas.status || "Aktif";
+                return (
                 <tr key={petugas.id} className="hover:bg-gray-50/50 transition-colors">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
-                        {petugas.name.charAt(0)}
+                        {petugas.name ? petugas.name.charAt(0).toUpperCase() : '?'}
                       </div>
                       <span className="font-medium text-gray-800">{petugas.name}</span>
                     </div>
@@ -76,11 +89,11 @@ export default function PetugasPage() {
                   </td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
-                      petugas.status === 'Aktif' 
+                      status === 'Aktif' 
                         ? 'bg-emerald-100 text-emerald-700' 
                         : 'bg-red-100 text-red-700'
                     }`}>
-                      {petugas.status}
+                      {status}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right">
@@ -89,7 +102,7 @@ export default function PetugasPage() {
                     </button>
                   </td>
                 </tr>
-              ))}
+              )})}
               {filteredData.length === 0 && (
                 <tr>
                   <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
@@ -99,6 +112,7 @@ export default function PetugasPage() {
               )}
             </tbody>
           </table>
+          )}
         </div>
       </div>
     </div>

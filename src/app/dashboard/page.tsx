@@ -63,7 +63,10 @@ export default function DashboardPage() {
     getDashboardData().then((result) => {
       setData(result);
       setLoading(false);
-    }).catch(console.error);
+    }).catch((err) => {
+      console.error(err);
+      setLoading(false);
+    });
 
     // Auto-refresh polling
     const pollInterval = setInterval(() => {

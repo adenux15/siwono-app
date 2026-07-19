@@ -34,15 +34,11 @@ export default function DaftarRakPage() {
   useEffect(() => {
     getRackList({ limit: 100 }).then((res) => {
       if (res.success && res.data) {
-        // Map data to include capacity mock for now
-        const mapped = res.data.map((r) => ({
-          ...r,
-          kapasitas: 500, // mock calculation
-          terisi: Math.floor(Math.random() * 500),
-          status: "Tersedia"
-        }))
-        setRacks(mapped)
+        setRacks(res.data)
       }
+      setIsLoading(false)
+    }).catch(err => {
+      console.error(err)
       setIsLoading(false)
     })
   }, [])

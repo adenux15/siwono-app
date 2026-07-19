@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Daftar Arsip", href: "/arsip", icon: Archive },
   { name: "Manajemen Rak", href: "/rak", icon: Layers },
+  { name: "Peminjaman", href: "/peminjaman", icon: Archive },
 ]
 
 export function Sidebar({ 

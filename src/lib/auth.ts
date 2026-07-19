@@ -5,7 +5,11 @@ import * as schema from "@/db/schema"
 
 export const auth = betterAuth({
     baseURL: process.env.BETTER_AUTH_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined) || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
-    trustedOrigins: process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : [],
+    trustedOrigins: [
+        "http://localhost:3000", 
+        "http://127.0.0.1:3000", 
+        "http://192.168.137.1:3000"
+    ].concat(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     secret: process.env.BETTER_AUTH_SECRET || "fallback_secret_for_development_only_siwono_12345_very_long",
     database: drizzleAdapter(db, {
         provider: "pg", // or "mysql", "pg"

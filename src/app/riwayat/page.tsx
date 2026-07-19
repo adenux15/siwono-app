@@ -8,49 +8,24 @@ import { Archive, ArrowLeft, Calendar, Clock, FileText, CheckCircle2, AlertCircl
 import Link from "next/link"
 import { NotificationCenter } from "@/components/NotificationCenter"
 
-// Mock Data untuk Riwayat Peminjaman Saya (Budi Santoso)
-const mockHistory = [
-  {
-    id: "1",
-    nomorWarkah: "1234/2026",
-    pemilik: "Siti Aminah",
-    tanggalPinjam: "2026-07-15",
-    batasWaktu: "2026-07-22",
-    status: "Aktif",
-    keterlambatan: 0,
-  },
-  {
-    id: "2",
-    nomorWarkah: "456/2025",
-    pemilik: "Budi Raharjo",
-    tanggalPinjam: "2026-07-01",
-    batasWaktu: "2026-07-08",
-    status: "Terlambat",
-    keterlambatan: 10,
-  },
-  {
-    id: "3",
-    nomorWarkah: "7890/2024",
-    pemilik: "Ahmad Fauzi",
-    tanggalPinjam: "2026-06-10",
-    batasWaktu: "2026-06-17",
-    status: "Selesai",
-    keterlambatan: 0,
-  },
-  {
-    id: "4",
-    nomorWarkah: "112/2026",
-    pemilik: "Rina Kusuma",
-    tanggalPinjam: "2026-05-20",
-    batasWaktu: "2026-05-27",
-    status: "Selesai",
-    keterlambatan: 2,
-  }
-]
+import { useState, useEffect } from "react"
+import { getRiwayatPeminjaman } from "@/app/peminjaman/actions"
 
 export default function RiwayatPage() {
-  const aktif = mockHistory.filter(h => h.status !== "Selesai")
-  const selesai = mockHistory.filter(h => h.status === "Selesai")
+  const [history, setHistory] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    getRiwayatPeminjaman('usr_1').then((res) => {
+      if (res.success && res.data) {
+        setHistory(res.data)
+      }
+      setIsLoading(false)
+    })
+  }, [])
+
+  const aktif = history.filter(h => h.status !== "Selesai")
+  const selesai = history.filter(h => h.status === "Selesai")
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">

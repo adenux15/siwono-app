@@ -1,8 +1,8 @@
 "use server"
 
 import { db } from "@/db"
-import { racks, rooms } from "@/db/schema"
-import { eq, desc, asc, like, and, count, or } from "drizzle-orm"
+import { racks, rooms, albums } from "@/db/schema"
+import { eq, desc, asc, like, and, count } from "drizzle-orm"
 import { revalidatePath } from "next/cache"
 
 export async function getRackList({
@@ -40,7 +40,7 @@ export async function getRackList({
 
     const offset = (page - 1) * limit
 
-    const data = await db
+    const dataRows = await db
       .select({
         id: racks.id,
         code: racks.code,
@@ -61,6 +61,31 @@ export async function getRackList({
       .where(whereClause)
 
     const total = totalResult[0].count
+
+    // Calculate capacity and fill
+    const rackIds = dataRows.map(r => r.id);
+    let allAlbums: any[] = [];
+    if (rackIds.length > 0) {
+      allAlbums = await db.select().from(albums);
+    }
+    
+    const data = dataRows.map(r => {
+      const rackAlbums = allAlbums.filter(a => a.rackId === r.id);
+      const kapasitas = rackAlbums.reduce((sum, a) => sum + a.capacity, 0);
+      const terisi = rackAlbums.reduce((sum, a) => sum + a.currentFill, 0);
+      const percent = kapasitas > 0 ? Math.round((terisi / kapasitas) * 100) : 0;
+      let status = "Tersedia";
+      if (percent >= 100) status = "Penuh";
+      else if (percent >= 80) status = "Hampir Penuh";
+
+      return {
+        ...r,
+        kapasitas,
+        terisi,
+        status,
+        percent
+      };
+    });
 
     return { success: true, data, total, page, limit, totalPages: Math.ceil(total / limit) }
   } catch (error) {
