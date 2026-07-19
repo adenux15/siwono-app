@@ -3,15 +3,16 @@
 import { useState, useEffect, use } from "react"
 import { ArrowLeft, Save, X, Loader2, ArrowRightLeft } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { transferPeminjaman, getLoanDetail } from "../../actions"
 
-export default function AlihPeminjamanPage({ params }: { params: Promise<{ id: string }> }) {
+export default function AlihPeminjamanPage() {
   const router = useRouter()
-  const { id } = use(params)
+  const params = useParams<{ id: string }>()
+  const id = params.id
   
   const [loan, setLoan] = useState<any>(null)
   const [newBorrowerName, setNewBorrowerName] = useState("")
