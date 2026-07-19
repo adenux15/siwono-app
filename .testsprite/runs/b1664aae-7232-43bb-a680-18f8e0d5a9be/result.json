@@ -1,0 +1,20 @@
+{
+  "testId": "734afa86-2d02-4f6d-b9d6-9bdb220efab3",
+  "status": "failed",
+  "startedAt": "2026-07-19T08:43:07.073Z",
+  "finishedAt": "2026-07-19T08:46:27.345Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784450784719014//tmp/7267f13d-8299-4411-bf0d-503a798989b1/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_c70633f01ded1279",
+  "runIdIfAvailable": "b1664aae-7232-43bb-a680-18f8e0d5a9be",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 11,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion): TEST FAILURE\n\nSaving the loan did not succeed — the application returned a system error instead of confirming the loan.\n\nObservations:\n- The page displays a red error message: 'Terjadi kesalahan pada sistem.'\n- The expected success message 'Peminjaman Berhasil Dicatat' did not appear after clicking 'Simpan Peminjaman'.\n- The submitted form contained Nomor Warkah '1234/2026' and Nama Peminjam 'Budi Santoso', indicating the submission was attempted but failed server-side or by…",
+  "apiOutput": null,
+  "trace": null
+}

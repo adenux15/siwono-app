@@ -90,7 +90,7 @@ export async function getRiwayatPeminjaman(userId?: string) {
       })
       .from(loans)
       .innerJoin(archives, eq(loans.archiveId, archives.id))
-      .where(eq(loans.initialUserId, userId))
+      .where(eq(loans.initialUserId, targetUserId))
       .orderBy(desc(loans.createdAt));
 
     return { success: true, data: result };
@@ -201,7 +201,7 @@ export async function getNotifications(userId?: string) {
       .from(notifications)
       .leftJoin(loans, eq(notifications.loanId, loans.id))
       .leftJoin(archives, eq(loans.archiveId, archives.id))
-      .where(eq(notifications.userId, userId))
+      .where(eq(notifications.userId, targetUserId))
       .orderBy(desc(notifications.createdAt));
 
     return { success: true, data: result };

@@ -1,0 +1,9 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nSaving the loan did not succeed — the application returned a system error instead of confirming the loan.\n\nObservations:\n- The page displays a red error message: 'Terjadi kesalahan pada sistem.'\n- The expected success message 'Peminjaman Berhasil Dicatat' did not appear after clicking 'Simpan Peminjaman'.\n- The submitted form contained Nomor Warkah '1234/2026' and Nama Peminjam 'Budi Santoso', indicating the submission was attempted but failed server-side or by application logic.",
+  "recommendedFixTarget": {
+    "kind": "unknown",
+    "reference": "Terjadi kesalahan pada sistem.",
+    "rationale": null
+  },
+  "evidence": []
+}
