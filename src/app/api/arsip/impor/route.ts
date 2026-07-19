@@ -44,16 +44,16 @@ export async function POST(request: Request) {
       if (!archiveNumber) continue // Skip empty rows
 
       const targetAlbum = findAlbum(String(roomName), String(rackCode), String(albumCode))
+      if (!targetAlbum) continue
 
       await db.insert(archives).values({
         id: uuidv4(),
         archiveNumber: String(archiveNumber),
         docType: String(docType),
         ownerName: String(ownerName),
-        albumId: targetAlbum ? targetAlbum.id : null,
+        albumId: targetAlbum.id,
         status: 'Tersedia',
         createdAt: new Date(),
-        updatedAt: new Date(),
       })
 
       importedCount++
