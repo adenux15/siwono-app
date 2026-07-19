@@ -1,0 +1,9 @@
+{
+  "rootCauseHypothesis": "The most likely host-side cause is that the dashboard data fetch is failing or never completing after login, so the frontend remains stuck in the loading state. This can happen if the backend dashboard endpoint is down, misconfigured on the host, blocked by CORS/proxy/auth/session issues, or cannot reach its database/service dependency. Because navigation away and back did not resolve it, the issue is probably not a UI-only render bug but an unresolved network/API response problem on the hosting side. Underlying error: TEST FAILURE\n\nThe dashboard did not render after login — the loading spinner and the message 'Memuat data dashboard...' remained and the expected dashboard content never appeared.\n\nObservations:\n- The page shows a persistent loading spinner with the text 'Memuat data dashboard...'.\n- Searches for 'Dasbor Monitor', 'Total Arsip Warkah', and 'Arsip Tersedia' returned no matches.\n- Navigating away to 'Pencarian' and back to 'Dashboard' did not resolve the loading; the spinner remained visible.",
+  "recommendedFixTarget": {
+    "kind": "env",
+    "reference": "Memuat data dashboard...",
+    "rationale": "Check the hosting/backend pipeline for the dashboard data request after login. The spinner likely never clears because the client is waiting on an API call that is timing out, returning 4xx/5xx, or being blocked by an auth/session issue. Inspect server logs, network requests, and environment variables for the dashboard endpoint; verify the API base URL, database connectivity, and that the authenticated user can fetch dashboard stats. If the dashboard data endpoint is failing, restore it or return a safe empty payload and ensure the frontend handles errors by stopping the spinner and showing a fallback state instead of waiting indefinitely."
+  },
+  "evidence": []
+}

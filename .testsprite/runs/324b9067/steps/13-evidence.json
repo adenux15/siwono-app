@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "snapshot",
+    "stepIndex": 13,
+    "summary": "Step 13 'Expected the table loading spinner to disappear so the racks table is loaded.' failed. Error: TEST BLOCKED\n\nThe test could not be run — the racks table did not load, preventing verification of filtering.\n\nObservations:\n- The Manajemen Rak page shows a persistent loading spinner in the racks table area.\n- No shelf rows are visible in the table to confirm the 'Yuridis Utama' filter.",
+    "path": "steps/13-snapshot.html"
+  }
+]

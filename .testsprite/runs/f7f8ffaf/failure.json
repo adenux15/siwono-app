@@ -1,0 +1,5 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nLogin with the provided credentials did not succeed — authentication was rejected by the application.\n\nObservations:\n- After submitting the form, the page displayed a red alert with the text \"Invalid email or password\".\n- The page remained on the login screen and did not show any dashboard heading or overview content.\n- The email field contained 'admin@siwono.local' and a password was entered, indicating the credentials were attempted.",
+  "recommendedFixTarget": null,
+  "evidence": []
+}

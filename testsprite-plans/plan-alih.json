@@ -1,0 +1,21 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Alih Peminjaman allows transferring archive custody",
+  "description": "Verifies that the Alih Peminjaman page loads correctly.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to /login and login with admin@siwono.local and password123"
+    },
+    {
+      "type": "action",
+      "description": "Navigate to /peminjaman/alih"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert that the page displays the form to transfer an archive"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "testId": "74768347-a734-471e-97df-a8c80436defa",
+  "status": "failed",
+  "startedAt": null,
+  "finishedAt": "2026-07-19T07:27:06.030Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784446023530537//tmp/b2b7e852-57dc-4930-8079-c0cd28217637/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_7e6e15fe16971ccd",
+  "runIdIfAvailable": "554067f0-617f-4d5f-ae8d-7aca381574d1",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 15,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion): The most likely host-side cause is that the dashboard data fetch is failing or never completing after login, so the frontend remains stuck in the loading state. This can happen if the backend dashboard endpoint is down, misconfigured on the host, blocked by CORS/proxy/auth/session issues, or cannot reach its database/service dependency. Because navigation away and back did not resolve it, the issue is probably not a UI-only render bug but an unresolved network/API response p…"
+}

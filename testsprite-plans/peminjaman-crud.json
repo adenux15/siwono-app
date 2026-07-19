@@ -1,0 +1,47 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Peminjaman form allows user to borrow an archive",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the login page"
+    },
+    {
+      "type": "action",
+      "description": "Fill the email input with 'admin@siwono.local' and the password input with 'password123'"
+    },
+    {
+      "type": "action",
+      "description": "Submit the login form"
+    },
+    {
+      "type": "action",
+      "description": "Click the 'Daftar Arsip' link in the sidebar"
+    },
+    {
+      "type": "action",
+      "description": "Look at the table and copy the 'Nomor Warkah' of an archive that has the status 'Tersedia'"
+    },
+    {
+      "type": "action",
+      "description": "Click the 'Peminjaman' link in the sidebar"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page heading 'Form Peminjaman Arsip' is visible"
+    },
+    {
+      "type": "action",
+      "description": "Fill in the 'Nomor Warkah' with the copied number, and fill in 'Nama Peminjam' and 'Keperluan / Catatan' fields"
+    },
+    {
+      "type": "action",
+      "description": "Click the 'Simpan Peminjaman' button"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the success message 'Peminjaman Berhasil Dicatat' is displayed"
+    }
+  ]
+}

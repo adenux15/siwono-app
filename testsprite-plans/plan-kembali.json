@@ -1,0 +1,25 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Process loan return updates loan status to Selesai",
+  "description": "When a user views a loan detail and clicks Proses Pengembalian, the loan's status is updated.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to /login and login with admin@siwono.local and password123"
+    },
+    {
+      "type": "action",
+      "description": "Navigate to /peminjaman"
+    },
+    {
+      "type": "action",
+      "description": "Click on the first active loan (if any) or look for an 'Aksi' menu and click 'Proses Pengembalian'"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert that a success message is shown or a form to process return appears"
+    }
+  ]
+}

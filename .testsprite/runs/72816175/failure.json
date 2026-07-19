@@ -1,0 +1,5 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nThe dashboard did not load — the dashboard content remained in the loading state after login and reload attempts.\n\nObservations:\n- After logging in as admin@siwono.local, the dashboard page shows a spinner and the message 'Memuat data dashboard...'.\n- Clicking the 'Dashboard' menu item and waiting multiple times did not reveal the heading 'Dasbor Monitor' or the summary cards 'Total Arsip Warkah' and 'Arsip Tersedia'.\n- The left navigation and Logout button are visible, indicating the app UI is reachable but the dashboard content fails to render.",
+  "recommendedFixTarget": null,
+  "evidence": []
+}

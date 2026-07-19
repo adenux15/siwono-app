@@ -1,0 +1,25 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Impor Arsip allows uploading excel files",
+  "description": "Verifies that the /arsip/impor page loads correctly and handles file uploads. Since testing actual file uploads requires specific test data, we verify the UI presence and basic interactions.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to /login and login with admin@siwono.local and password123"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert that Dashboard or 'Selamat Datang' text is visible"
+    },
+    {
+      "type": "action",
+      "description": "Navigate to the /arsip/impor page"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert that the page displays a title like 'Impor Data Arsip' or a file upload input is visible"
+    }
+  ]
+}

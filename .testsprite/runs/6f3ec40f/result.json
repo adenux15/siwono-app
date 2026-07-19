@@ -1,0 +1,20 @@
+{
+  "testId": "57302dd6-20c2-490f-8191-d193ae46ff87",
+  "status": "failed",
+  "startedAt": "2026-07-19T06:59:08.590Z",
+  "finishedAt": "2026-07-19T07:01:47.002Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/1784444477998485//tmp/fafd5be1-d876-45f4-862b-f919fa677726/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_46f9538ae3e4a071",
+  "runIdIfAvailable": "6f3ec40f-852d-47b3-b7af-c91bd4fa2871",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 5,
+  "failureKind": "assertion",
+  "verdict": "failed",
+  "executionStatus": "completed",
+  "summary": "Failed (assertion) on step 5: TEST FAILURE\n\nThe 'Peminjaman' (loan) feature could not be reached because the sidebar link is not present in the UI.\n\nObservations:\n- The left sidebar lists only: 'Pencarian', 'Dashboard', 'Daftar Arsip', and 'Manajemen Rak'.\n- A page search for 'Peminjaman' returned 0 matches and no 'Peminjaman' menu item was visible.\n- The dashboard area shows a loading message ('Memuat data dashboard...'), but the sidebar is fully visible and does not include the requested link.",
+  "apiOutput": null,
+  "trace": null
+}

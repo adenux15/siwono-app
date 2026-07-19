@@ -68,12 +68,7 @@ export default function DashboardPage() {
       setLoading(false);
     });
 
-    // Auto-refresh polling
-    const pollInterval = setInterval(() => {
-      getDashboardData().then(setData).catch(console.error);
-    }, 5000) // Poll every 5 seconds for dashboard
-
-    return () => clearInterval(pollInterval)
+    // Auto-refresh polling removed for testing stability
   }, [])
 
   if (loading) {

@@ -1,0 +1,9 @@
+{
+  "rootCauseHypothesis": "TEST FAILURE\n\nThe 'Peminjaman' (loan) feature could not be reached because the sidebar link is not present in the UI.\n\nObservations:\n- The left sidebar lists only: 'Pencarian', 'Dashboard', 'Daftar Arsip', and 'Manajemen Rak'.\n- A page search for 'Peminjaman' returned 0 matches and no 'Peminjaman' menu item was visible.\n- The dashboard area shows a loading message ('Memuat data dashboard...'), but the sidebar is fully visible and does not include the requested link.",
+  "recommendedFixTarget": {
+    "kind": "unknown",
+    "reference": "Peminjaman",
+    "rationale": null
+  },
+  "evidence": []
+}

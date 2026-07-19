@@ -1,0 +1,39 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Arsip page displays archives and supports search",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the login page"
+    },
+    {
+      "type": "action",
+      "description": "Fill the email input with 'admin@siwono.local' and the password input with 'password123'"
+    },
+    {
+      "type": "action",
+      "description": "Submit the login form"
+    },
+    {
+      "type": "action",
+      "description": "Click the 'Arsip' link in the sidebar"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page heading 'Daftar Induk Arsip Warkah' is visible and the table loads the list of archives from the database"
+    },
+    {
+      "type": "action",
+      "description": "Type '2026' into the search input"
+    },
+    {
+      "type": "action",
+      "description": "Click the Filter button"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the table shows archives matching the search term"
+    }
+  ]
+}

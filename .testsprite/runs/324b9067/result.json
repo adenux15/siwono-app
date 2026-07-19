@@ -1,0 +1,20 @@
+{
+  "testId": "6c76650e-2f71-461a-b61c-2e2bb85e39c4",
+  "status": "blocked",
+  "startedAt": "2026-07-19T06:58:59.768Z",
+  "finishedAt": "2026-07-19T07:07:48.130Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/24089478-f021-7051-23df-8c72e0794c6b/178444486784787//tmp/cd55f4f5-fb7e-4331-82c7-2c5abf56f342/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_86260946d9f48b4b",
+  "runIdIfAvailable": "324b9067-b667-44aa-92c7-8c35ecbb0c3e",
+  "codeVersion": "v1",
+  "targetUrl": "https://siwono-app.vercel.app/",
+  "targetUrlSource": "run",
+  "failedStepIndex": 12,
+  "failureKind": null,
+  "verdict": "blocked",
+  "executionStatus": "completed",
+  "summary": "Blocked before a verdict could be produced: TEST BLOCKED\n\nThe test could not be run — the racks table did not load, preventing verification of filtering.\n\nObservations:\n- The Manajemen Rak page shows a persistent loading spinner in the racks table area.\n- No shelf rows are visible in the table to confirm the 'Yuridis Utama' filter.",
+  "apiOutput": null,
+  "trace": null
+}

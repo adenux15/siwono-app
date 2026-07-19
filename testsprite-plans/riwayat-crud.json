@@ -1,0 +1,11 @@
+{
+  "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+  "type": "frontend",
+  "name": "Riwayat page displays user's loan history",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the Riwayat page at /riwayat" },
+    { "type": "assertion", "description": "Verify the page heading 'Riwayat Peminjaman Saya' is visible" },
+    { "type": "action", "description": "Click the 'Selesai' tab" },
+    { "type": "assertion", "description": "Verify the list of completed loans is displayed" }
+  ]
+}

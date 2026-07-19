@@ -27,20 +27,22 @@ function PeminjamanFormContent() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [errorMsg, setErrorMsg] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setErrorMsg("")
     
     try {
       const result = await createPeminjaman(formData)
       if (result.success) {
         setIsSuccess(true)
       } else {
-        alert(result.error || "Gagal mencatat peminjaman.")
+        setErrorMsg(result.error || "Gagal mencatat peminjaman.")
       }
     } catch (err) {
-      alert("Terjadi kesalahan sistem.")
+      setErrorMsg("Terjadi kesalahan sistem.")
     } finally {
       setIsSubmitting(false)
     }
@@ -161,6 +163,11 @@ function PeminjamanFormContent() {
             />
           </div>
         </CardContent>
+        {errorMsg && (
+          <div className="px-6 pb-2 text-red-600 font-medium text-sm text-center">
+            {errorMsg}
+          </div>
+        )}
         <CardFooter className="border-t bg-slate-50/50 py-5 flex justify-end gap-3 rounded-b-xl">
           <Link href="/">
             <Button type="button" variant="outline" className="border-slate-300">

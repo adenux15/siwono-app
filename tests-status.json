@@ -1,0 +1,313 @@
+﻿{
+  "items": [
+    {
+      "id": "32b43773-81ac-432a-b27d-db0e7d77c319",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Process loan return updates loan status to Selesai",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "draft",
+      "description": "When a user views a loan detail and clicks Proses Pengembalian, the loan's status is updated.",
+      "planStepCount": 4,
+      "priority": "p1",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T07:27:51.153Z",
+      "updatedAt": "2026-07-19T07:27:51.182Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": null,
+        "rawStatus": "ps=Idle; ts=null"
+      }
+    },
+    {
+      "id": "fc2a2dfd-3c28-4b54-a1b0-56546399b0d4",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Alih Peminjaman allows transferring archive custody",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "draft",
+      "description": "Verifies that the Alih Peminjaman page loads correctly.",
+      "planStepCount": 3,
+      "priority": "p1",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T07:27:48.534Z",
+      "updatedAt": "2026-07-19T07:27:48.563Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": null,
+        "rawStatus": "ps=Idle; ts=null"
+      }
+    },
+    {
+      "id": "5d09cf65-6c77-4844-9a53-07b7e6094a97",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Impor Arsip allows uploading excel files",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "draft",
+      "description": "Verifies that the /arsip/impor page loads correctly and handles file uploads. Since testing actual file uploads requires specific test data, we verify the UI presence and basic interactions.",
+      "planStepCount": 4,
+      "priority": "p1",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T07:27:43.634Z",
+      "updatedAt": "2026-07-19T07:27:43.663Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": null,
+        "rawStatus": "ps=Idle; ts=null"
+      }
+    },
+    {
+      "id": "340a4418-9f2c-4d36-ab48-c165f9a7b364",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Riwayat page displays user's loan history",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "passed",
+      "description": "",
+      "planStepCount": 4,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:42:59.042Z",
+      "updatedAt": "2026-07-19T06:47:42.225Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Passed",
+        "rawStatus": "ps=Idle; ts=Passed"
+      }
+    },
+    {
+      "id": "57302dd6-20c2-490f-8191-d193ae46ff87",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Peminjaman form allows user to borrow an archive",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "failed",
+      "description": "",
+      "planStepCount": 8,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:42:27.231Z",
+      "updatedAt": "2026-07-19T07:26:38.169Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Failed",
+        "rawStatus": "ps=Idle; ts=Failed"
+      }
+    },
+    {
+      "id": "d150f69f-6659-49ab-a8b2-e4462093e474",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Arsip page displays archives and supports search",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "passed",
+      "description": "",
+      "planStepCount": 8,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:41:58.210Z",
+      "updatedAt": "2026-07-19T07:11:01.011Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Passed",
+        "rawStatus": "ps=Idle; ts=Passed"
+      }
+    },
+    {
+      "id": "6c76650e-2f71-461a-b61c-2e2bb85e39c4",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Rak page displays shelves and allows filtering",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "running",
+      "description": "",
+      "planStepCount": 7,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:39:18.756Z",
+      "updatedAt": "2026-07-19T07:22:20.576Z",
+      "details": {
+        "processingStatus": "Executing",
+        "testStatus": "Blocked",
+        "rawStatus": "ps=Executing; ts=Blocked"
+      }
+    },
+    {
+      "id": "ef16ee2b-5dbd-4119-a519-2db302a8a78a",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Petugas page displays users and supports search",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "passed",
+      "description": "",
+      "planStepCount": 4,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:37:03.335Z",
+      "updatedAt": "2026-07-19T06:48:43.716Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Passed",
+        "rawStatus": "ps=Idle; ts=Passed"
+      }
+    },
+    {
+      "id": "74768347-a734-471e-97df-a8c80436defa",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Dashboard page loads and displays key metrics",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "failed",
+      "description": "",
+      "planStepCount": 4,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:36:03.523Z",
+      "updatedAt": "2026-07-19T07:27:06.030Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Failed",
+        "rawStatus": "ps=Idle; ts=Failed"
+      }
+    },
+    {
+      "id": "3aae7744-ed6a-42b3-bcdf-dbf628a8eac2",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Login with valid credentials redirects to dashboard",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "passed",
+      "description": "",
+      "planStepCount": 4,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:35:33.862Z",
+      "updatedAt": "2026-07-19T06:59:20.735Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Passed",
+        "rawStatus": "ps=Idle; ts=Passed"
+      }
+    },
+    {
+      "id": "6c6d83b6-3f67-4b98-9e62-96efa8d9b69f",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Login with invalid credentials shows error",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "passed",
+      "description": "",
+      "planStepCount": 4,
+      "priority": null,
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T06:35:33.156Z",
+      "updatedAt": "2026-07-19T06:47:45.367Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Passed",
+        "rawStatus": "ps=Idle; ts=Passed"
+      }
+    },
+    {
+      "id": "ed11aeb9-73df-4f9c-8817-1872008643d1",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Impor Arsip Page allows uploading excel files",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "blocked",
+      "description": "Verifies that the /arsip/impor page loads correctly and handles file uploads. Since testing actual file uploads requires specific test data, we just verify the UI presence.",
+      "planStepCount": 4,
+      "priority": "p1",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T01:45:27.432Z",
+      "updatedAt": "2026-07-19T01:46:09.375Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Blocked",
+        "rawStatus": "ps=Idle; ts=Blocked"
+      }
+    },
+    {
+      "id": "c615b6e6-24b7-4baf-93bf-e7739c1e25f4",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Arsip warkah page shows data and allows creation",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "blocked",
+      "description": "Verifies that the archive list page loads correctly, filtering works, and adding a new archive is successful.",
+      "planStepCount": 8,
+      "priority": "p0",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T01:42:15.834Z",
+      "updatedAt": "2026-07-19T01:45:29.679Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Blocked",
+        "rawStatus": "ps=Idle; ts=Blocked"
+      }
+    },
+    {
+      "id": "d63b911b-3ee6-4a46-8f37-1b19a4125b36",
+      "projectId": "056ee56a-1b78-47d5-80f0-d3387224e573",
+      "projectName": "SIWONO",
+      "name": "Process loan return updates loan status to Selesai",
+      "type": "frontend",
+      "createdFrom": "cli",
+      "status": "blocked",
+      "description": "When a user views a loan detail and clicks Proses Pengembalian, the loan's status is updated and the user is shown a success message.",
+      "planStepCount": 5,
+      "priority": "p1",
+      "produces": null,
+      "consumes": null,
+      "category": null,
+      "createdAt": "2026-07-19T01:22:03.763Z",
+      "updatedAt": "2026-07-19T01:30:41.540Z",
+      "details": {
+        "processingStatus": "Idle",
+        "testStatus": "Blocked",
+        "rawStatus": "ps=Idle; ts=Blocked"
+      }
+    }
+  ],
+  "nextToken": null
+}
